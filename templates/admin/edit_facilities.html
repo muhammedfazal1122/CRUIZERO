@@ -1,0 +1,54 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'aindex.html' %}
+
+{% block body %}
+
+<form class="form-control" id="form1" name="form1" method="post" action="/admin_edit_facilities_post">
+<input class="form-control" type="hidden" name="fid" id="fid" value="{{ data['f_id'] }}"/>
+  <table class="table table-bordered" width="701" height="366" border="1">
+    <tr>
+      <th colspan="2" scope="row">facilities</th>
+    </tr>
+    <tr>
+      <th width="171" scope="row">ship</th>
+      <td width="25"><label>
+        <select class="form-control" name="textfield">
+            {% for i in data1 %}
+            <option value="{{ i["login_id"] }}" {% if i['ship_id']==data['ship_id'] %} selected {% endif %}>{{ i["ship_name"] }}</option>
+            {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">facilities</th>
+      <td><label>
+        <input class="form-control" type="text" name="textfield2" id="textfield2" value="{{ data['facility'] }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">description</th>
+      <td><label>
+        <textarea name="textarea" id="textarea" cols="45" rows="5">{{ data['description'] }}</textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">charge</th>
+      <td><label>
+        <input class="form-control" type="text" name="textfield3" id="textfield3"  value="{{ data['charge'] }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input class="btn bg-primary" type="submit" name="button" id="button" value="update" /></th>
+    </tr>
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

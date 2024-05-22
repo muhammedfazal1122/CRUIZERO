@@ -1,0 +1,56 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'shipblog.html' %}
+
+{% block body %}
+<form class="form-control" id="form1" name="form1" method="post" action="/ship_staff_management_post">
+  <table class="table table-bordered" width="624" height="493" border="1">
+    <tr>
+      <th colspan="2" scope="row">staff management</th>
+    </tr>
+    <tr>
+      <th width="175" scope="row">Staff_name</th>
+      <td width="357"><label>
+        <input type="text" name="textfield2" id="textfield2" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><label>
+        <input type="text" name="textfield" id="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><label>
+        <input type="text" name="textfield4" id="textfield4" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone</th>
+      <td><input type="text" name="textfield5" id="textfield5" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td><input type="text" name="textfield6" id="textfield6" /></td>
+    </tr>
+    <tr>
+      <th scope="row">Work</th>
+      <td><label>
+        <input type="text" name="textfield3" id="textfield3" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input class="btn btn-info" type="submit" name="button" id="button" value="add" /></th>
+    </tr>
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %} }

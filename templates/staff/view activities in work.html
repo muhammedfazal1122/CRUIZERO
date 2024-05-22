@@ -1,0 +1,31 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{% extends 'staff/staff home.html' %}
+
+{% block body %}
+
+<body><form action="/staff_view_activities_in_work" method="post"><table class="table table-bordered" width="595" height="256" border="1">
+  <tr>
+    <th scope="row">s_no</th>
+    <th><div align="center">work</div></th>
+    <th><div align="center">date</div></th>
+    <th><div align="center">activities</div></th>
+    </tr>
+    {% for i in data %}
+
+  <tr>
+    <th scope="row">&nbsp;{{ loop.index }}</th>
+    <td>{{ i['work'] }}</td>
+    <td>{{ i['dt'] }}</td>
+    <td>{{ i['activities'] }}&nbsp;</td>
+    </tr>
+    {% endfor %}
+</table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

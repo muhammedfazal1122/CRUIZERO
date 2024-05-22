@@ -1,0 +1,40 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'shipblog.html' %}
+
+{% block body %}
+
+<form class="form-control" action="/ship_allocate_work_post" method="post">
+  <table class="table table-bordered" width="501" height="298" border="1">
+    <tr>
+      <th colspan="2" scope="row"><p>Allocate work</p></th>
+    </tr>
+    <tr>
+      <th height="67" scope="row">Staff</th>
+    <input class="form-control" type="hidden" value="{{ data1['work_id'] }}" name="wid">
+      <td><label>
+        <select class="form-control" name="select" id="select">
+           {% for i in data %}
+                       <option value="{{ i['login_id'] }}">{{ i['name'] }}</option>
+
+           {% endfor %}
+
+
+
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input class="btn btn-info" type="submit" name="submit" id="button" value="Submit" /></th>
+    </tr>
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

@@ -1,0 +1,46 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'aindex.html' %}
+
+{% block body %}
+
+<form class="form-control" id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered" width="764" height="277" border="1">
+    <tr>
+      <th scope="row">S_no</th>
+      <th>Ship </th>
+      <th>Departure</th>
+      <th>Arrival</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <th width="50px">{{ loop.index }}&nbsp;</th>
+      <td>&nbsp;{{ i["ship_name"] }}</td>
+      <td>&nbsp;{{ i["start_port"] }}</td>
+      <td>{{ i["end_port"] }}</td>
+      <td>{{ i["start_date"] }}</td>
+      <td>&nbsp;{{ i["end_date"] }}</td>
+      <td>&nbsp;{{ i["status"] }}</td>
+        <td width="50px"><a class="btn btn-info" href="/admin_edit_journey/{{ i['journey_id'] }}">Edit</a> </td>
+        <td width="50px"><a class="btn btn-danger" href="/admin_delete_journey/{{ i['journey_id'] }}" onclick="return confirm('Are You Sure to delete {{ i['start_port'] }} ?')">Delete</a> &nbsp;</td>
+    <td width="50px"><a class="btn btn-warning" href="">Locate</a> &nbsp;</td>
+  </tr>
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

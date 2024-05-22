@@ -1,0 +1,41 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'aindex.html' %}
+
+{% block body %}
+
+<form class="form-control" action="" method="get">
+  <table class="table table-bordered" width="740" height="208" border="1">
+    <tr>
+      <th width="131" scope="row">S_no</th>
+      <th width="108">Ship</th>
+      <th width="216">Facilities</th>
+      <th width="184">Description</th>
+      <th width="67">Charge</th>
+{#        <td></td>#}
+{#        <td></td>#}
+    </tr>
+      {% for i in data %}
+    <tr>
+      <th width="50px">{{ loop.index }}</th>
+      <td>{{ i["ship_name"] }}&nbsp;</td>
+      <td>&nbsp;{{ i["facilities"] }}&nbsp;</td>
+      <td>&nbsp;{{ i["description"] }}&nbsp;</td>
+      <td>{{ i["charge"] }}&nbsp;</td>
+{#     / <td><a href="/admin_edit_facilities/{{ i['f_id'] }}">Edit</a> </td>#}
+{#    <td><a href="/admin_delete_facilities/{{ i['f_id'] }}" onclick="return confirm('Are You Sure to delete {{ i['facility'] }}facility?')">Delete</a>#}
+    </td>
+    </tr>
+     {% endfor %}
+  </table>
+  
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

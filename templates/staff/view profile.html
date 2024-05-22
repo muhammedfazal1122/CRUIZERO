@@ -1,0 +1,51 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'staff/staff home.html' %}
+
+{% block body %}
+<form class="form-control" action="" method="get" enctype="multipart/form-data"><table width="677" height="524" border="1">
+  <tr>
+    <th colspan="2" scope="row">
+    <img src="{{ data['photo'] }}"height="70px" alt=""/>
+    </th>
+    </tr>
+  <tr>
+    <th scope="row">USERNAME</th>
+    <td>{{ data['name'] }}</td>
+  </tr>
+
+  <tr>
+    <th scope="row">PLACE</th>
+    <td>{{ data['place'] }}</td>
+  </tr>
+  <tr>
+    <th scope="row">pin</th>
+    <td>{{ data['pin'] }}</td>
+  </tr>
+  <tr>
+    <th scope="row">PHONE NUMBER</th>
+    <td>{{ data['phone'] }}</td>
+  </tr>
+  <tr>
+    <th scope="row">EMAIL</th>
+    <td>{{ data['email'] }}</td>
+  </tr>
+  <tr>
+    <th scope="row">JOB</th>
+    <td>{{ data['work'] }}</td>
+  </tr>
+  <tr>
+    <th scope="row">SHIP</th>
+    <td>{{ data['ship_name'] }}</td>
+   </tr>
+</table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

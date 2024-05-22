@@ -1,0 +1,55 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'shipblog.html' %}
+
+{% block body %}
+
+<form class="form-control" id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered" width="378" height="255" border="1">
+    <tr>
+      <th colspan="2" scope="row">Work </th>
+    </tr>
+    <tr>
+      <th scope="row">User name</th>
+      <td><label>
+        <input class="form-control" type="text" name="textfield" id="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row"><p>Ship</p></th>
+      <td><label>
+        <input class="form-control" type="text" name="textfield2" id="textfield2" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row"><p>Work</p></th>
+      <td><label>
+        <input class="form-control" type="text" name="textfield3" id="textfield3" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Date</th>
+      <td><label>
+        <input class="form-control" type="text" name="textfield4" id="textfield4" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Status</th>
+      <td><label>
+        <input class="form-control" type="text" name="textfield5" id="textfield5" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input class="btn btn-info" type="submit" name="button" id="button" value="Submit" /></th>
+    </tr>
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

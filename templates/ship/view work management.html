@@ -1,0 +1,40 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'shipblog.html' %}
+
+{% block body %}
+<form class="form-control" id="form1" name="form1" method="post" action="/ship_edit_work_management_post">
+  <table class="table table-bordered" width="764" height="277" border="1">
+    <tr>
+      <th scope="row">S_no</th>
+      <th>Work</th>
+      <th>Date</th>
+     
+      <td></td>
+      <td></td>
+      <td></td>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <th width="50px">{{ loop.index }}&nbsp;</th>
+      <td>&nbsp;{{ i["work"] }}</td>
+      <td>&nbsp;{{ i["date"] }}</td>
+      
+        <td width="50px"><a class="btn btn-info" href="/ship_allocate_work/{{ i['work_id'] }}">allocate</a> </td>
+        <td width="50px"><a class="btn btn-success" href="/ship_edit_work_management/{{ i['work_id'] }}">Edit</a> </td>
+        <td width="50px"><a class="btn btn-danger" href="/ship_delete_work_management/{{ i['work_id'] }}" onclick="return confirm('Are You Sure to delete {{ i['work'] }} ?')">Delete</a> &nbsp;</td>
+  </tr>
+
+       {% endfor %}
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock%}

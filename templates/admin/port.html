@@ -1,0 +1,63 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'aindex.html' %}
+
+{% block body %}
+
+<form class="form-control" action="/port" method="post">
+<table class="table table-bordered" width="475" height="336" border="1">
+  <tr>
+    <th width="164" scope="row">port name</th>
+    <td width="295"><label>
+      <input class="form-control" type="text" name="textfield" id="textfield" />
+    </label></td>
+  </tr>
+  <tr>
+    <th scope="row">country name</th>
+    <td><label>
+      <select class="form-control" name="select" id="select">
+          <option>America</option>
+          <option>Argentina</option>
+          <option>Albania</option>
+          <option>Angola</option>
+          <option>Dubai</option>
+          <option>Singapore</option>
+          <option>Alaska</option>
+
+
+      </select>
+    </label></td>
+  </tr>
+  <tr>
+    <th height="83" scope="row">country code</th>
+    <td><label>
+      <input class="form-control" type="text" name="textfield2" id="textfield2" />
+    </label></td>
+  </tr>
+  <tr>
+    <th height="83" scope="row">longitude</th>
+    <td><label>
+      <input class="form-control" type="text" name="textfield3" id="textfield3" />
+    </label></td>
+  </tr>
+  <tr>
+    <th height="83" scope="row">latitude</th>
+    <td><label>
+      <input class="form-control" type="text" name="textfield4" id="textfield4" />
+    </label></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input class="btn-primary" type="submit" name="button" id="button" value="ADD" /></th>
+  </tr>
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+
+{% endblock%}

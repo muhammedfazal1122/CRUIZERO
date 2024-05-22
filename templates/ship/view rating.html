@@ -1,0 +1,35 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'shipblog.html' %}
+
+{% block body %}
+<form class="form-control" id="form1" name="form1" method="post" action="/ship_view_rating">
+  <table class="table table-bordered" width="656" height="207" border="1">
+    <tr>
+      <th scope="row">S_no</th>
+      <th scope="row">User</th>
+      <th>Rating</th>
+      <th>Review</th>
+      <th>Date</th>
+    </tr>
+          {% for i in data %}
+    <tr>
+      <th>&nbsp;{{ loop.index }}</th>
+      <td>&nbsp;{{ i['name'] }}</td>
+      <td>{{ i['rating'] }}</td>
+      <td>&nbsp;{{ i['review'] }}</td>
+      <td>{{ i['date'] }}</td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

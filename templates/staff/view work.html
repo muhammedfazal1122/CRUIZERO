@@ -1,0 +1,37 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'staff/staff home.html' %}
+
+{% block body %}
+<form class="form-control" action="" method="get"><table class="table table-bordered" width="595" height="256" border="1">
+  <tr>
+    <th scope="row">S_no</th>
+    <th><div align="center">Work</div></th>
+    <th><div align="center">Date</div></th>
+    <th><div align="center">Status</div></th>
+    </tr>
+    {% for i in data %}
+
+
+  <tr>
+    <th scope="row">{{ loop.index }}</th>
+    <td>&nbsp;{{ i['work'] }}</td>
+    <td>&nbsp;{{ i['date'] }}</td>
+    <td>&nbsp;{{ i['status'] }}</td>
+  <td><a class="btn btn-success" href="/staff_update_work_status/{{ i['work_id'] }}" onclick="return confirm('are you sure')">update</a> </td>
+  <td><a class="btn btn-info" href="/staff_activities_in_work/{{ i['work_id'] }}" >activities</a> </td>
+    </tr>
+        {% endfor %}
+
+</table>
+</form>
+{#</body>#}
+{#</html>#}
+
+{% endblock %}

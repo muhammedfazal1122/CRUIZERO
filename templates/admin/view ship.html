@@ -1,0 +1,40 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'aindex.html' %}
+
+{% block body %}
+
+<form class="form-control" id="form1" name="form1" method="get" action="">
+  <table class="table table-bordered" width="760" height="183" border="1">
+    <tr>
+      <th width="94" scope="row">S_no</th>
+      <th width="110"><div align="center">Ship_name</div></th>
+      <th width="168"><div align="center">Description</div></th>
+      <th width="177"><div align="center">Photo</div></th>
+      <th width="177"><div align="center">Capacity</div></th>
+      <th width="177">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+
+
+    <tr>
+      <th scope="row">&nbsp;{{ loop.index }}</th>
+      <td>&nbsp;{{ i['ship_name'] }}</td>
+      <td>&nbsp;{{ i['discription'] }}</td>
+      <td><img src="{{ i['photo'] }}" height="70px"> </td>
+      <td>&nbsp;{{ i['capacity'] }}</td>
+      <td width="50px" ><a class="btn btn-info"href="/admin_edit_ship/{{ i['ship_id'] }}">Edit</a> </td>
+<td width="50px"><a class="btn btn-danger" href="/admin_delete_ship/{{ i['ship_id'] }}" onclick="return confirm('Are You Sure to delete {{ i['ship_name'] }} ship?')">Delete</a> &nbsp;</td>    </tr>
+            {% endfor %}
+
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

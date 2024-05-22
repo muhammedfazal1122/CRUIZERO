@@ -1,0 +1,50 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+
+{% extends 'aindex.html' %}
+
+{% block body %}
+
+<form class="form-control" action="/ship_add" method="post" enctype="multipart/form-data">
+    <table class="table table-bordered" >
+  <tr>
+    <th colspan="2" scope="row">Ship management</th>
+    </tr>
+  <tr>
+    <th width="192" scope="row">Ship name</th>
+    <td width="370"><label>
+      <input class="form-control"  type="text" name="textfield2" id="textfield2" />
+      </label></td>
+  </tr>
+  <tr>
+    <th scope="row">Description</th>
+    <td><label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea>
+    </label></td>
+  </tr>
+  <tr>
+    <th scope="row">photo</th>
+    <td><label>
+      <input class="form-control" type="file" name="fileField" id="fileField" />
+    </label></td>
+  </tr>
+  <tr>
+    <th scope="row">capacity</th>
+    <td><label>
+      <input class="form-control" type="text" name="textfield3" id="textfield3" />
+    </label></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input class="btn btn-primary" type="submit" name="button" id="button" value="Add" /></th>
+    </tr>
+</table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}

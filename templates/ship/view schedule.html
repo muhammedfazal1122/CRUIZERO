@@ -1,0 +1,33 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'shipblog.html' %}
+
+{% block body %}
+
+<form class="form-control" id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered" width="656" height="207" border="1">
+    <tr>
+      <th scope="row">s_no</th>
+      <th>Date</th>
+      <th>Departure</th>
+      <th>Arrival</th>
+    </tr>
+          {% for i in data %}
+    <tr>
+      <th>&nbsp;{{ loop.index }}</th>
+      <td>&nbsp;{{ i['date'] }}</td>
+      <td>&nbsp;{{ i['departure_time'] }}</td>
+      <td>&nbsp;{{ i['arrival_time'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{#</body>#}
+{#</html>#}
+{% endblock %}
